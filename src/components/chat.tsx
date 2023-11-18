@@ -29,14 +29,14 @@ export function Chat() {
 
               {message.role === 'assistant' && (
                 <Avatar>
-                  <AvatarFallback>AN</AvatarFallback>
-                  <AvatarImage src="https://github.com/rocketseat.png" />
+                  <AvatarFallback>Carol IA</AvatarFallback>
+                  <AvatarImage src="/carol.jpg" />
                 </Avatar>
               )}
 
               <p className="leading-relaxed">
                 <span className="block font-bold text-slate-800">
-                  {message.role === 'user' ? 'Usuário' : 'IA'}
+                  {message.role === 'user' ? 'Usuário' : 'Carol IA'}
                 </span>
                 {message.content}
               </p>
