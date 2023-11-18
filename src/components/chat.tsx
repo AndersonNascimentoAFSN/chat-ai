@@ -13,7 +13,7 @@ export function Chat() {
   return (
     <Card className="w-[440px] h-[700px] grid grid-rows-[min-content_1fr_min-content]">
       <CardHeader>
-        <CardTitle>Chart IA</CardTitle>
+        <CardTitle>Chat IA</CardTitle>
         <CardDescription>Using Vercel SDK to create a chat bot.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
