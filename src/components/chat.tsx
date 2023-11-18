@@ -6,20 +6,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { ScrollArea } from './ui/scroll-area';
 
 export function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({ api: '/api/chat' });
 
   return (
-    <Card className="w-[440px] h-[700px] grid grid-rows-[min-content_1fr_min-content]">
+    <Card className="w-[800px] m-4">
       <CardHeader>
         <CardTitle>Chat IA</CardTitle>
         <CardDescription>Using Vercel SDK to create a chat bot.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {
-          messages.map((message) => (
-            <div className="flex gap-3 text-slate-600 text-sm" key={message.id}>
+      <CardContent>
+        <ScrollArea className="h-[600px] w-full pr-6">
+          {messages.map((message) => (
+            <div className="flex gap-3 text-slate-600 text-sm mb-4" key={message.id}>
               {message.role === 'user' && (
                 <Avatar>
                   <AvatarFallback>AN</AvatarFallback>
@@ -41,8 +42,8 @@ export function Chat() {
                 {message.content}
               </p>
             </div>
-          ))
-        }
+          ))}
+        </ScrollArea>
       </CardContent>
       <CardFooter>
         <form className="w-full flex gap-2" onSubmit={handleSubmit}>
